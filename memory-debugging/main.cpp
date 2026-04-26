@@ -49,9 +49,6 @@ int main() {
 
   freeList(list);
 
-  std::cout << list->value << '\n';
-
-  freeList(list);
 
   Node* leakNode = new Node;
   leakNode->value = 99;
@@ -63,8 +60,8 @@ int main() {
   arr[0] = 1;
   arr[1] = 2;
   arr[2] = 3;
-  arr[5] = 999;
 
+  delete leakNode;
   delete[] arr;
 
   return 0;
